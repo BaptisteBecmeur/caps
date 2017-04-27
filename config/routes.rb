@@ -1,17 +1,6 @@
 Rails.application.routes.draw do
-  get 'services/new'
 
-  get 'services/create'
-
-  get 'services/show'
-
-  get 'services/index'
-
-  get 'services/edit'
-
-  get 'services/update'
-
-  get 'services/destroy'
+ resources :services
 
   devise_for :users
   root to: 'pages#home'
