@@ -1,2 +1,3 @@
-<h1>Services#show</h1>
-<p>Find me in app/views/services/show.html.erb</p>
+<!-- app/views/products/show.html.erb -->
+<%= cl_image_tag @service.cover, height: 300, width: 400, crop: :fill %>
+<%= @service.introduction %>

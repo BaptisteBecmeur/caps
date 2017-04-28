@@ -1,2 +1,8 @@
-<h1>Services#new</h1>
-<p>Find me in app/views/services/new.html.erb</p>
+<!-- app/views/products/_form.html.erb -->
+<%= simple_form_for(@service) do |f| %>
+  <%= f.input :pseudo %>
+  <%= f.input :introduction %>
+  <%= f.input :cover %>
+  <%= f.input :cover_cache, as: :hidden %>
+  <%= f.submit %>
+<% end %>

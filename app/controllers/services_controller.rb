@@ -1,5 +1,8 @@
 class ServicesController < ApplicationController
 
+  before_filter :authenticate_user!, except: [:index, :show]
+  before_action :find_service, only: [:show, :edit, :update, :destroy]
+
   def index
     @services = Service.all
   end
@@ -39,11 +42,11 @@ class ServicesController < ApplicationController
 
   private
 
-  def find_post
+  def find_service
     @service = Service.find(params[:id])
   end
 
-  def post_params
+  def service_params
     params.require(:service).permit(:pseudo, :city, :country, :cover, :introduction, :content, :tag)
   end
 end
