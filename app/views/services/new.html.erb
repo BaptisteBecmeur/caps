@@ -1,8 +1,6 @@
 <!-- app/views/products/_form.html.erb -->
-<%= simple_form_for(@service) do |f| %>
-  <%= f.input :pseudo %>
-  <%= f.input :introduction %>
-  <%= f.input :cover %>
-  <%= f.input :cover_cache, as: :hidden %>
-  <%= f.submit %>
-<% end %>
+<div class="container-fluid container-signup container_new_post">
+  <div class="container">
+    <%= render 'form' %>
+  </div>
+</div>
