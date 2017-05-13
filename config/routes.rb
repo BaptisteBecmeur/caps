@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'users/destroy'
+
   resources :services
 
   devise_for :users
