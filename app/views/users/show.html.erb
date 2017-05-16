@@ -5,7 +5,18 @@
         <div class="text-center frame-picture">
           <%= image_tag @user.picture || "http://api.adorable.io/avatars/300/#{current_user.email}", class: "user-picture" %>
         </div>
-        <h1 class="text-center"> <strong>  <%= @user.first_name %> <%=@user.last_name %> </strong> </h1>
+
+        <div id="name-profile">
+            <h4 class="text-center">
+              <% if @user.first_name.blank? %>
+                <strong>C'est quoi ton nom ?</strong>
+              <% else %>
+                <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize[0] %>.
+              <% end %>
+            </h4>
+          </div>
+
+        <!-- <h1 class="text-center"> <strong>  <%= @user.first_name %> <%=@user.last_name %> </strong> </h1> -->
 
       </div>
     </div>
