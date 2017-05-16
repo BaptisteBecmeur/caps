@@ -21,15 +21,17 @@
           </div>
 
         <!-- Profile fields -->
-            <hr/>
-              <div class="row">
-                <div class="col-sm-6">
-                  <%= f.input :first_name, label: 'Prénom' %>
-                </div>
-                <div class="col-sm-6">
-                  <%= f.input :last_name, label: 'Nom' %>
-                </div>
+          <hr/>
+            <div class="row">
+              <div class="col-sm-6">
+                <%= f.input :first_name, label: 'Prénom' %>
               </div>
+              <div class="col-sm-6">
+                <%= f.input :last_name, label: 'Nom' %>
+              </div>
+            </div>
+
+              <%= f.input :picture, label: 'Photo de profil' %>
 
           <div class="form-actions">
             <%= f.button :submit, "Update" %>
