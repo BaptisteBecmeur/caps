@@ -3,6 +3,20 @@
     <div class="row">
       <div class= "col-md-8 col-md-offset-2 form-profile ">
         <div class="text-center frame-picture">
+
+            <% if  @user == current_user %>
+
+              <% if @user.picture.blank? %>
+              <h5>
+                <%= link_to t(".top_call_to_action", default: "Je crée mon profil"), edit_user_registration_path, class: "btn btn-default text-center mini-space" %>
+              </h5>
+              <% else %>
+                <h5>
+                  <%= link_to t(".top_call_to_action", default: "J'ajoute encore des infos !"), edit_user_registration_path, class: "btn btn-default text-center second-button" %>
+                </h5>
+              <% end %>
+            <% end %>
+
           <%= image_tag @user.picture || "http://api.adorable.io/avatars/300/#{current_user.email}", class: "user-picture" %>
         </div>
 
