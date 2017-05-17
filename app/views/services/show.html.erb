@@ -1,4 +1,8 @@
 <!-- app/views/products/show.html.erb -->
 <%= cl_image_tag @service.cover, height: 300, width: 400, crop: :fill %>
+<%= @service.pseudo %>
 <%= @service.introduction %>
+<%= @service.content %>
+<%= @service.city %>
 <%= @service.country %>
+
