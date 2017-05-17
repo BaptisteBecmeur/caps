@@ -35,4 +35,28 @@
       </div>
     </div>
   </div>
+
+  <div class="container-fluid container-signup">
+    <div class= "col-md-8 col-md-offset-2 form-profile-botom ">
+      <h4 class="text-center">
+        <% if @user == current_user %>
+          <strong>Renseignements</strong>
+        <% else %>
+          <strong>Articles de <%= @user.first_name %> <%=@user.last_name %></strong>
+        <% end %>
+      </h4>
+      <ul id="home-articles" class="list-unstyled">
+
+          <li class="col-sm-6">
+            <div class="container-cards">
+
+            </div>
+          </li>
+
+
+      </ul>
+    </div>
+  </div>
+
+
 </div>

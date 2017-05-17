@@ -1,8 +1,17 @@
 <!-- app/views/products/show.html.erb -->
-<%= cl_image_tag @service.cover, height: 300, width: 400, crop: :fill %>
-<%= @service.pseudo %>
-<%= @service.introduction %>
-<%= @service.content %>
-<%= @service.city %>
-<%= @service.country %>
+<div class="diving">
+  <div class="container-fluid container-signup">
+    <div class="row">
+      <div class= "col-md-8 col-md-offset-2 form-profile ">
 
+        <%= cl_image_tag @service.cover, height: 300, width: 400, crop: :fill %>
+        <%= @service.pseudo %>
+        <%= @service.introduction %>
+        <%= @service.content %>
+        <%= @service.city %>
+        <%= @service.country %>
+
+      </div>
+    </div>
+  </div>
+</div>
