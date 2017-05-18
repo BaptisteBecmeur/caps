@@ -19,6 +19,11 @@ class ServicesController < ApplicationController
     @service = Service.find(params[:id])
     @service_coordinates = { lat: @service.latitude, lng: @service.longitude }
     # @alert_message = "Vous êtes sur le profil de #{@service.pseudo}"
+    @hash = Gmaps4rails.build_markers(@flats) do |service, marker|
+      marker.lat service.latitude
+      marker.lng service.longitude
+      marker.infowindow render_to_string(partial: "/flats/map_box", locals: { service: service })
+    end
   end
 
   def new

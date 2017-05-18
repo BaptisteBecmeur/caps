@@ -10,9 +10,7 @@
         <%= @service.content %>
         <%= @service.city %>
         <%= @service.country %>
-        <%= @service.address %>
 
-        <div id="map"></div>
       <div class="row">
       <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@service.latitude},#{@service.longitude}&zoom=14&size=640x400&markers=color:black%7C#{@service.latitude},#{@service.longitude}" %>
       </div>
