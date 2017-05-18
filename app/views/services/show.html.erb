@@ -13,15 +13,9 @@
         <%= @service.address %>
 
         <div id="map"></div>
-
-        <% content_for(:after_js) do %>
-          <%= javascript_tag do %>
-            $(document).ready(function() {
-              var coord = <%= raw @flat_coordinates.to_json %>;
-              alert('Flat coordinates are ' + coord.lat + ', ' + coord.lng);
-            });
-          <% end %>
-        <% end %>
+      <div class="row">
+      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@service.latitude},#{@service.longitude}&zoom=14&size=640x400&markers=color:black%7C#{@service.latitude},#{@service.longitude}" %>
+      </div>
 
         <div class="text-center buttons-view-post">
 

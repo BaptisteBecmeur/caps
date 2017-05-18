@@ -5,6 +5,14 @@ class ServicesController < ApplicationController
 
   def index
     @services = Service.all
+
+    @services = Service.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@flats) do |service, marker|
+      marker.lat service.latitude
+      marker.lng service.longitude
+      marker.infowindow render_to_string(partial: "/flats/map_box", locals: { service: service })
+    end
   end
 
   def show
