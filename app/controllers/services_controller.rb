@@ -8,6 +8,8 @@ class ServicesController < ApplicationController
   end
 
   def show
+    @service = Service.find(params[:id])
+    @service_coordinates = { lat: @service.latitude, lng: @service.longitude }
     # @alert_message = "Vous êtes sur le profil de #{@service.pseudo}"
   end
 
