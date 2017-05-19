@@ -1,35 +1,61 @@
 <!-- app/views/products/show.html.erb -->
-<div class="diving">
-  <div class="container-fluid container-signup">
+<div class="container-service">
+  <div class="container-fluid">
     <div class="row">
-      <div class= "col-md-8 col-md-offset-2 form-profile ">
+      <div class= "col-md-8 col-md-offset-2 form-artist text-center">
 
-        <%= cl_image_tag @service.cover, height: 300, width: 400, crop: :fill %>
-        <%= @service.pseudo %>
-        <%= @service.introduction %>
-        <%= @service.content %>
-        <%= @service.city %>
-        <%= @service.country %>
+        <%= cl_image_tag @service.cover, height: 300, width: 400, crop: :fill, class: "artiste-picture" %>
+        <div id="name-profile">
+            <h4 class="text-center">
+              <%= @service.pseudo %>
+              <%= @service.introduction %>
+              <%= @service.content %>
+              <%= @service.city %>
+              <%= @service.country %>
+              <% if @service.pseudo.blank? %>
+                <strong>C'est quoi ton pseudo ?</strong>
+              <% else %>
+                <%= @service.pseudo.capitalize %>
+              <% end %>
+            </h4>
+          </div>
+      </div>
+    </div>
 
       <div class="row">
-      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@service.latitude},#{@service.longitude}&zoom=14&size=640x400&markers=color:black%7C#{@service.latitude},#{@service.longitude}" %>
+        <div class= "col-md-8 col-md-offset-2 form-artist hidden-md hidden-xs text-center">
+          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@service.latitude},#{@service.longitude}&zoom=14&size=840x350&markers=color:black%7C#{@service.latitude},#{@service.longitude}" %>
+        </div>
       </div>
 
-        <div class="text-center buttons-view-post">
+      <div class="row">
+         <div class= "col-md-8 col-md-offset-2 hidden-xs hidden-lg form-artist text-center">
+          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@service.latitude},#{@service.longitude}&zoom=14&size=320x200&markers=color:black%7C#{@service.latitude},#{@service.longitude}" %>
+        </div>
+      </div>
 
-          <% if @service.user == current_user %>
-          <%= link_to "Modifier mes informations", edit_service_path(@service), class: "btn btn-success btn-md" %>
-          <% else %>
+      <div class="row">
+         <div class= "hidden-md hidden-lg form-artist text-center">
+          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@service.latitude},#{@service.longitude}&zoom=14&size=320x200&markers=color:black%7C#{@service.latitude},#{@service.longitude}" %>
+        </div>
+      </div>
 
-          <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal" > Acheter l'article </button>
+          <div class= "col-md-8 col-md-offset-2 form-artist-bottom">
 
-          <% end %>
+            <div class="text-center">
+
+              <% if @service.user == current_user %>
+                <%= link_to "Modifier mes informations", edit_service_path(@service), class: "btn btn-danger btn-md" %>
+                <% else %>
+
+              <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal" > Acheter l'article </button>
+
+            <% end %>
 
           <%= link_to "Voir tous les artistes", services_path, class: "btn btn-default btn-md" %>
-        </div>
-
-
       </div>
     </div>
   </div>
 </div>
+
+
