@@ -1,2 +1,18 @@
-<h1>Uploads#new</h1>
-<p>Find me in app/views/uploads/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class= "col-md-8 col-md-offset-2">
+      <h1 class="text-center">Postez vos médias</h1>
+      <%= simple_form_for [@service, @upload] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :title, label: "nommez la photo" %>
+        <%= f.input :description, label: "décrivez la photo" %>
+        <%= f.input :photo, label: "Téléchargez vos photos" %>
+        <%= f.submit "Télécharger", class: "btn btn-primary" %>
+      <% end %>
+      <h4 class="text-center">
+        <%= link_to '< Retour', :back, class: "btn btn-default" %>
+      </h4>
+
+    </div>
+  </div>
+</div>

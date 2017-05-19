@@ -58,4 +58,29 @@
   </div>
 </div>
 
+   <div class="col-md-12">
+          <h2>Les photos associées</h2>
+
+          <% if @service.user == current_user %>
+          <%= link_to "Add photo", new_service_upload_path(@service), class: "btn btn-default" %>
+            <% else %>
+          <h5>Aucune photo associée à l'article</h5>
+        <% end %>
+
+
+          <ul class="list-unstyled">
+            <% @service.uploads.each do |upload| %>
+            <li>
+              <%= cl_image_tag upload.photo, overlay: "logo-mini-s", effect: "mask", opacity: "50", class: "img-responsive" %>
+              <p>Titre : <%= upload.title %></p>
+              <p>Description : <%= upload.description %></p>
+
+<%= link_to "supprimer la photo", service_upload_path(service_id: @service.id, id: upload.id),
+              data: { confirm: 'Are you sure?' }, method: :delete, class: "btn btn-primary" %>
+
+            </li>
+            <% end %>
+          </ul>
+        </div>
+
 
