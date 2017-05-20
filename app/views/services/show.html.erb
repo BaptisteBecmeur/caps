@@ -52,7 +52,7 @@
 
         <ul class="list-unstyled list-inline">
           <% @service.uploads.each do |upload| %>
-            <li class="col-xs-6 col-md-4">
+            <li class="col-xs-6 col-md-4 form-artist">
               <%= cl_image_tag upload.photo, height: 500, width: 600, crop: :fill, class: "img-responsive image-download" %>
                 <p>Titre : <%= upload.title %></p>
                 <p>Description : <%= upload.description %></p>
