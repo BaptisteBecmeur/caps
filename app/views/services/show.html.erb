@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class= "col-md-8 col-md-offset-2 form-artist text-center">
-        <%= cl_image_tag @service.cover, height: 300, width: 400, crop: :fill, class: "artiste-picture" %>
+        <%= cl_image_tag @service.cover, height: 400, width: 400, crop: :fill, class: "artiste-picture" %>
         <div id="name-profile">
             <h4 class="text-center">
               <%= @service.pseudo %>
@@ -57,10 +57,11 @@
                 <p>Titre : <%= upload.title %></p>
                 <p>Description : <%= upload.description %></p>
                 <%= link_to "supprimer la photo", service_upload_path(service_id: @service.id, id: upload.id),
-                  data: { confirm: 'Are you sure?' }, method: :delete, class: "btn btn-primary" %>
+                  data: { confirm: 'Are you sure?' }, method: :delete,class: "btn btn-primary" %>
             </li>
           <% end %>
         </ul>
+
       </div>
     </div>
 
