@@ -41,7 +41,7 @@
       </div>
 
       <!-- Photos associées -->
-
+      <div class="row">
       <div class="col-md-8 col-md-offset-2 form-artist text-center">
         <h4>Quelques photos de mes spectacles</h4>
           <% if @service.user == current_user %>
@@ -50,10 +50,10 @@
           <h5>Aucune photo associée à l'article</h5>
           <% end %>
 
-        <ul class="list-unstyled">
+        <ul class="list-unstyled list-inline">
           <% @service.uploads.each do |upload| %>
-            <li>
-              <%= cl_image_tag upload.photo, class: "img-responsive" %>
+            <li class="col-xs-6 col-md-4">
+              <%= cl_image_tag upload.photo, height: 500, width: 600, crop: :fill, class: "img-responsive image-download" %>
                 <p>Titre : <%= upload.title %></p>
                 <p>Description : <%= upload.description %></p>
                 <%= link_to "supprimer la photo", service_upload_path(service_id: @service.id, id: upload.id),
@@ -62,7 +62,9 @@
           <% end %>
         </ul>
       </div>
+    </div>
 
+    <div class="row">
       <div class= "col-md-8 col-md-offset-2 form-artist-bottom">
         <div class="text-center">
           <% if @service.user == current_user %>
@@ -70,7 +72,8 @@
                 <% else %>
               <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal" > Acheter l'article </button>
             <% end %>
-        <%= link_to "Voir tous les artistes", services_path, class: "btn btn-default btn-md" %>
+          <%= link_to "Voir tous les artistes", services_path, class: "btn btn-default btn-md" %>
+        </div>
       </div>
     </div>
   </div>
