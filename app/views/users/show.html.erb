@@ -52,12 +52,33 @@
             </div>
           </li>
 
-
       </ul>
     </div>
   </div>
 
+  <div class="container-fluid container-signup">
+    <div class= "col-md-8 col-md-offset-2 form-profile-botom">
+      <h4 class="text-center">
+        <% if @user == current_user %>
+          <strong>Renseignements</strong>
+        <% else %>
+          <strong>Voir les prestations</strong>
+          <% @user.services.each do |service| %>
+            <h3><%= service.pseudo %></h3>
+           <% end %>
+        <% end %>
+      </h4>
+      <ul id="home-articles" class="list-unstyled">
 
+          <li class="col-sm-6">
+            <div class="container-cards">
+
+            </div>
+          </li>
+
+      </ul>
+    </div>
+  </div>
 
 
 </div>
