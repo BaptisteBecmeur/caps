@@ -3,7 +3,7 @@ class Service < ApplicationRecord
   has_many :uploads, dependent: :destroy
 
   geocoded_by :address
-  after_validation :geocode, if: :address_changed?
+  # after_validation :geocode, if: :address_changed?
 
   mount_uploader :cover, PhotoUploader
 end
