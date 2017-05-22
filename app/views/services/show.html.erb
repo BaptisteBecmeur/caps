@@ -61,7 +61,7 @@
           <% if @service.user == current_user %>
             <%= link_to "Modifier mes informations", edit_service_path(@service), class: "btn btn-success btn-md" %>
                 <% else %>
-              <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal" > Acheter l'article </button>
+              <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal" > booker l'artiste</button>
             <% end %>
 
           <%= link_to service_path(@service), method: :delete, data: { confirm: "Are you sure?" } do %>
