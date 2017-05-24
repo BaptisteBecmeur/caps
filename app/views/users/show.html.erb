@@ -3,17 +3,15 @@
     <div class="row">
       <div class= "col-md-8 col-md-offset-2 form-profile ">
         <div class="text-center frame-picture">
-
             <% if  @user == current_user %>
-
               <% if @user.picture.blank? %>
               <h5>
-                <%= link_to t(".top_call_to_action", default: "Je crée mon profil"), edit_user_registration_path, class: "btn btn-default text-center mini-space" %>
-              </h5>
+                  <%= link_to t(".top_call_to_action", default: "Rajouter des infos"), edit_user_registration_path, class: "btn btn-default text-center second-button" %>
+                </h5>
               <% else %>
                 <h5>
-                  <%= link_to t(".top_call_to_action", default: "J'ajoute encore des infos !"), edit_user_registration_path, class: "btn btn-default text-center second-button" %>
-                </h5>
+                  <%= link_to t(".top_call_to_action", default: "Je crée mon profil"), edit_user_registration_path, class: "btn btn-default text-center mini-space" %>
+              </h5>
               <% end %>
             <% end %>
 
@@ -59,11 +57,6 @@
     <div class= "col-md-8 col-md-offset-2 form-profile-botom">
       <div class="text-center">
         <% if @user == current_user %>
-          <strong>Mes prestations</strong>
-          <br/>
-          <!-- Button (call-to-action) -->
-          <%= link_to t(".top_call_to_action", default: "proposer une presta"), new_service_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
-        <% else %>
           <strong>Voir les prestations</strong>
         <% end %>
           <ul id="home-articles" class="list-unstyled">
