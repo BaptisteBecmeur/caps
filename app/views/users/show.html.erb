@@ -60,6 +60,9 @@
       <div class="text-center">
         <% if @user == current_user %>
           <strong>Mes prestations</strong>
+          <br/>
+          <!-- Button (call-to-action) -->
+          <%= link_to t(".top_call_to_action", default: "proposer une presta"), new_service_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
         <% else %>
           <strong>Voir les prestations</strong>
         <% end %>
