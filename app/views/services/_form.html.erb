@@ -7,7 +7,7 @@
         <%= f.input :content %>
         <%= f.input :address %>
         <%= f.input :city %>
-        <%= f.input :country %>
+        <%= f.input :country, priority: [ 'FR' ] %>
         <%= f.input :cover %>
         <%= f.input :cover_cache, as: :hidden %>
         <%= f.submit "Publier", class: "btn btn-default text-center" %>
