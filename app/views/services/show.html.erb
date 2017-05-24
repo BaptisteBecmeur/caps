@@ -22,20 +22,20 @@
     </div>
 
     <!-- Google maps -->
-      <div class="row">
+     <!--  <div class="row">
         <div class= "col-md-8 col-md-offset-2 form-artist text-center">
 
       <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@service.latitude},#{@service.longitude}&zoom=14&size=640x400&markers=color:black%7C#{@service.latitude},#{@service.longitude}" %>
 
         </div>
-      </div>
+      </div> -->
 
       <!-- Photos associées -->
       <div class="row">
       <div class="col-md-8 col-md-offset-2 form-artist text-center">
         <h4>Quelques photos de mes spectacles</h4>
           <% if @service.user == current_user %>
-            <%= link_to "Add photo", new_service_upload_path(@service), class: "btn btn-default" %>
+            <%= link_to "Ajouter des photos", new_service_upload_path(@service), class: "btn btn-default" %>
           <% else %>
           <h5>Aucune photo associée à l'article</h5>
           <% end %>
@@ -67,9 +67,7 @@
             <% end %>
 
           <% if @service.user == current_user %>
-            <%= link_to service_path(@service), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <i class="glyphicon glyphicon-trash btn btn-danger btn-md"></i>
-            <% end %>
+            <%= link_to "supprimer", service_path(@service), method: :delete, data: { confirm: "Are you sure?" },class: "btn btn-danger" %>
           <% end %>
 
           <%= link_to "Voir tous les artistes", services_path, class: "btn btn-default btn-md" %>

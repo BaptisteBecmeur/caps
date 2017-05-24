@@ -1,27 +1,25 @@
 <div class="">
-
-    <div class="card-filter-home" style="background: url(<%= cloudinary_url service.cover, opacity: "80" %>); background-size:cover">
-    </div>
-    <div class="card-details">
-
-      <% if @user == current_user %>
-        <%= link_to service_path(service), class:'trash-article', data: { confirm: 'Are you sure?' }, method: :delete do %>
+  <div class="card-filter-home" style="background: url(<%= cloudinary_url service.cover, opacity: "80" %>); background-size:cover">
+  </div>
+  <div class="card-details">
+    <% if @user == current_user %>
+      <%= link_to service_path(service), class:'trash-article', data: { confirm: 'Are you sure?' }, method: :delete do %>
           <%= image_tag("delete-btn.png") %>
         <% end %>
       <% end %>
 
-      <%= link_to service_path(service) do %>
+    <%= link_to service_path(service) do %>
 
-        <span class="card-post-cat"></span>
-        <h3><%= service.pseudo %></h3>
-        <p class="card-post-author">
+    <span class="card-post-cat"></span>
+      <h3><%= service.pseudo %></h3>
+      <p class="card-post-author">
           Publié par <%= service.user.first_name %>
-          <%= service.user.last_name[0] %>.
-        </p>
-        <p class="card-post-date">
-          <%= l service.user.created_at, format: :short %>
-        </p>
-      <% end %>
-    </div>
+        <%= service.user.last_name[0] %>.
+      </p>
+      <p class="card-post-date">
+        <%= l service.user.created_at, format: :short %>
+      </p>
+    <% end %>
+  </div>
 </div>
 
