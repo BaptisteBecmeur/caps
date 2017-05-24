@@ -52,7 +52,7 @@ class ServicesController < ApplicationController
 
   def destroy
     @service.destroy
-    redirect_to services_path
+    redirect_to user_path(current_user)
   end
 
   private
