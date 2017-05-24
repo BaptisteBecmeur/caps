@@ -29,13 +29,13 @@
     </div>
 
     <!-- Google maps -->
-     <!--  <div class="row">
+       <div class="row">
         <div class= "col-md-8 col-md-offset-2 form-artist text-center">
 
       <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@service.latitude},#{@service.longitude}&zoom=14&size=640x400&markers=color:black%7C#{@service.latitude},#{@service.longitude}" %>
 
         </div>
-      </div> -->
+      </div>
 
     <!-- Photos associées -->
     <div class="row">
@@ -53,10 +53,10 @@
               <%= cl_image_tag upload.photo, height: 500, width: 600, crop: :fill, class: "img-responsive image-download" %>
                 <p>Titre : <%= upload.title %></p>
                 <p>Description : <%= upload.description %></p>
-                <% if @user == current_user %>
+
                   <%= link_to "supprimer la photo", service_upload_path(service_id: @service.id, id: upload.id),
                     data: { confirm: 'Are you sure?' }, method: :delete,class: "btn btn-primary" %>
-                <% end %>
+
             </li>
           <% end %>
         </ul>
