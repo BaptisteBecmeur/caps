@@ -41,7 +41,7 @@
         <% if @user == current_user %>
           <strong>Renseignements</strong>
         <% else %>
-          <strong>Articles de <%= @user.first_name %> <%=@user.last_name %></strong>
+          <strong>Articles de <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize[0] %>.</strong>
         <% end %>
       </h4>
       <ul id="home-articles" class="list-unstyled">
@@ -58,28 +58,23 @@
 
   <div class="container-fluid container-signup">
     <div class= "col-md-8 col-md-offset-2 form-profile-botom">
-      <h4 class="text-center">
+      <div class="text-center">
         <% if @user == current_user %>
           <strong>Renseignements</strong>
         <% else %>
           <strong>Voir les prestations</strong>
-          <% @user.services.each do |service| %>
-          <div class="card-filter-home" style="background: url(<%= cloudinary_url service.cover, angle: 340, effect: "mask", opacity: "50" %>); background-size:cover">
-    </div>
-
-            <h3><%= service.pseudo %></h3>
-           <% end %>
         <% end %>
-      </h4>
-      <ul id="home-articles" class="list-unstyled">
-
+          <ul id="home-articles" class="list-unstyled">
+        <% @user.services.each do |service| %>
           <li class="col-sm-6">
             <div class="container-cards">
-
+            <%= render 'services/postuser', service: service %>
             </div>
           </li>
 
+        <% end %>
       </ul>
+      </div>
     </div>
   </div>
 
