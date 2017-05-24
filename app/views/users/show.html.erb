@@ -6,11 +6,11 @@
             <% if  @user == current_user %>
               <% if @user.picture.blank? %>
               <h5>
-                  <%= link_to t(".top_call_to_action", default: "Rajouter des infos"), edit_user_registration_path, class: "btn btn-default text-center second-button" %>
+                  <%= link_to t(".top_call_to_action", default: "Je crée mon profil"), edit_user_registration_path, class: "btn btn-default text-center second-button" %>
                 </h5>
               <% else %>
                 <h5>
-                  <%= link_to t(".top_call_to_action", default: "Je crée mon profil"), edit_user_registration_path, class: "btn btn-default text-center mini-space" %>
+                  <%= link_to t(".top_call_to_action", default: "Rajouter des infos"), edit_user_registration_path, class: "btn btn-default text-center mini-space" %>
               </h5>
               <% end %>
             <% end %>
