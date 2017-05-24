@@ -64,6 +64,7 @@
         <% else %>
           <strong>Voir les prestations</strong>
           <% @user.services.each do |service| %>
+
             <h3><%= service.pseudo %></h3>
            <% end %>
         <% end %>
