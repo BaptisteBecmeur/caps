@@ -1,9 +1,7 @@
 <div class="container-fluid">
-
   <div class="row-fluid">
     <div class="col-md-6">
-
-        <div id="map" style="width: 100%; height: 600px;"></div>
+      <div id="map" style="width: 100%; height: 600px;"></div>
 
         <% content_for(:after_js) do %>
           <script type="text/javascript">
@@ -22,15 +20,26 @@
             });
           </script>
         <% end %>
-
       </div>
     </div>
 
     <div class="col-md-6">
-
       <%= link_to new_service_path do %>
         <button class="btn btn-warning">New</button>
       <% end %>
+    </div>
+
+      <div class="container" id="home-articles">
+        <div class="row">
+          <h2>Toutes les prestations</h2>
+          <ul>
+            <% @services.each do |service| %>
+            <li class="col-xs-6 col-md-4 container-cards">
+              <%= render 'postuser', service: service %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

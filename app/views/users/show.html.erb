@@ -48,10 +48,9 @@
 
           <li class="col-sm-6">
             <div class="container-cards">
-
+              ########
             </div>
           </li>
-
       </ul>
     </div>
   </div>
@@ -60,7 +59,7 @@
     <div class= "col-md-8 col-md-offset-2 form-profile-botom">
       <div class="text-center">
         <% if @user == current_user %>
-          <strong>Renseignements</strong>
+          <strong>Mes prestations</strong>
         <% else %>
           <strong>Voir les prestations</strong>
         <% end %>
@@ -71,12 +70,9 @@
             <%= render 'services/postuser', service: service %>
             </div>
           </li>
-
         <% end %>
       </ul>
       </div>
     </div>
   </div>
-
-
 </div>

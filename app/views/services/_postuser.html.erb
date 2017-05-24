@@ -1,15 +1,16 @@
 <div class="">
 
-    <div class="card-filter-home" style="background: url(<%= cloudinary_url service.cover, angle: 340, effect: "mask", opacity: "50" %>); background-size:cover">
+    <div class="card-filter-home" style="background: url(<%= cloudinary_url service.cover, opacity: "80" %>); background-size:cover">
     </div>
     <div class="card-details">
 
+      <% if @user == current_user %>
         <%= link_to service_path(service), class:'trash-article', data: { confirm: 'Are you sure?' }, method: :delete do %>
           <%= image_tag("delete-btn.png") %>
         <% end %>
+      <% end %>
 
       <%= link_to service_path(service) do %>
-
 
         <span class="card-post-cat"></span>
         <h3><%= service.pseudo %></h3>

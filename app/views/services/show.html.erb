@@ -46,8 +46,10 @@
               <%= cl_image_tag upload.photo, height: 500, width: 600, crop: :fill, class: "img-responsive image-download" %>
                 <p>Titre : <%= upload.title %></p>
                 <p>Description : <%= upload.description %></p>
-                <%= link_to "supprimer la photo", service_upload_path(service_id: @service.id, id: upload.id),
-                  data: { confirm: 'Are you sure?' }, method: :delete,class: "btn btn-primary" %>
+                <% if @user == current_user %>
+                  <%= link_to "supprimer la photo", service_upload_path(service_id: @service.id, id: upload.id),
+                    data: { confirm: 'Are you sure?' }, method: :delete,class: "btn btn-primary" %>
+                  <% end %>
             </li>
           <% end %>
         </ul>
@@ -64,9 +66,11 @@
               <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal" > booker l'artiste</button>
             <% end %>
 
-          <%= link_to service_path(@service), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="glyphicon glyphicon-trash btn btn-danger btn-md"></i>
-        <% end %>
+          <% if @service.user == current_user %>
+            <%= link_to service_path(@service), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="glyphicon glyphicon-trash btn btn-danger btn-md"></i>
+            <% end %>
+          <% end %>
 
           <%= link_to "Voir tous les artistes", services_path, class: "btn btn-default btn-md" %>
         </div>
