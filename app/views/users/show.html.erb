@@ -64,6 +64,8 @@
         <% else %>
           <strong>Voir les prestations</strong>
           <% @user.services.each do |service| %>
+          <div class="card-filter-home" style="background: url(<%= cloudinary_url service.cover, angle: 340, effect: "mask", opacity: "50" %>); background-size:cover">
+    </div>
 
             <h3><%= service.pseudo %></h3>
            <% end %>

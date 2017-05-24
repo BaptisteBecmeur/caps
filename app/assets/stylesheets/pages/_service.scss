@@ -54,5 +54,35 @@
     margin-bottom: 20px;
 }
 
+ .card-filter-home {
+      position: relative;
+      height: 220px;
+      margin: 0 10px;
+      overflow: hidden;
+      border-radius: 5px;
+      a {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.4);
+        // transform: translateY(-100%);
+
+        // transition-property: all;
+        // transition-duration: .5s;
+        // transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+      }
+    }
 
 
