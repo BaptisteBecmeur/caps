@@ -43,12 +43,11 @@
         <% end %>
       </h4>
       <ul id="home-articles" class="list-unstyled">
-
-          <li class="col-sm-6">
-            <div class="container-cards">
+        <li class="col-sm-6">
+          <div class="container-cards">
               ########
-            </div>
-          </li>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
@@ -63,7 +62,7 @@
         <% @user.services.each do |service| %>
           <li class="col-sm-6">
             <div class="container-cards">
-            <%= render 'services/postuser', service: service %>
+            <%= render 'services/presta_user', service: service %>
             </div>
           </li>
         <% end %>
