@@ -2,7 +2,8 @@
   <div class= "col-md-8 col-md-offset-2 form-signup">
     <h2 class="text-center">Editer votre service</h2>
     <%= simple_form_for(@service) do |f| %>
-      <%= f.input :pseudo %>
+       <%= f.input :tag, collection: Service::TAGS, selected: Service::TAGS.first %>
+      <%= f.input :pseudo, label: "Pseudo" %>
       <%= f.input :introduction %>
       <%= f.input :content %>
       <%= f.input :address %>
@@ -17,3 +18,7 @@
     </h4>
   </div>
 </div>
+
+<%= content_for(:after_js) do %>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyCvegYCjKjhUpT8Op8O8BQMNJVYKsmqPSg"></script>
+<% end %>

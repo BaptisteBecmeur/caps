@@ -7,6 +7,10 @@ class Service < ApplicationRecord
 
   mount_uploader :cover, PhotoUploader
 
+  TAGS = ["Magicien", "Jongleur", "Danseur", "Humoriste"]
+
+  validates :tag, inclusion: { in: Service::TAGS, allow_nil: false }
+
 
   def full_address
     "#{address}, #{zip_code} #{city} #{ISO3166::Country[country].name}"

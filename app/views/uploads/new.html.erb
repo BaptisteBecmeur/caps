@@ -5,8 +5,8 @@
         <h1 class="text-center">Uploadez quelques photos</h1>
         <%= simple_form_for [@service, @upload] do |f| %>
           <%= f.error_notification %>
-          <%= f.input :title, label: "Nommez la photo" %>
-          <%= f.input :description, label: "Décrivez la photo" %>
+          <%= f.input :title, label: "Titre" %>
+          <%= f.input :description, label: "Description" %>
           <%= f.input :photo, label: "Téléchargez la photo" %>
           <%= f.submit "Télécharger", class: "btn btn-primary" %>
         <% end %>

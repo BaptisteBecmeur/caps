@@ -2,6 +2,7 @@
   <div class= "col-md-8 col-md-offset-2 form-signup">
     <h2 class="text-center">Proposer une prestation</h2>
       <%= simple_form_for(@service) do |f| %>
+        <%= f.input :tag, collection: Service::TAGS, selected: Service::TAGS.first %>
         <%= f.input :pseudo %>
         <%= f.input :introduction %>
         <%= f.input :content %>
