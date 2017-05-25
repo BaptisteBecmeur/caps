@@ -91,7 +91,10 @@
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
         </li>
-        <li><%= link_to t(".top_call_to_action", default: "Je suis un artiste"), new_service_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <li>
+          <%= link_to new_service_path do %>
+            <i class="fa fa-star-o"></i> <%= t ".profile", default: "Je suis un artiste" %>
+          <% end %>
         </li>
       </ul>
     </div>
