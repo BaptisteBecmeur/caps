@@ -6,7 +6,6 @@
         <%= cl_image_tag @service.cover, height: 400, width: 400, crop: :fill, class: "artiste-picture" %>
         <div id="name-profile">
             <h4 class="text-center">
-              <%= @service.pseudo %>
               <% if @service.pseudo.blank? %>
                 <strong>C'est quoi ton pseudo ?</strong>
               <% else %>
