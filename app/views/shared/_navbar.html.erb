@@ -26,10 +26,11 @@
         </div> -->
       <% end %>
 
-      <%= link_to services_path do %>
-        <i class="fa fa-star-o text-unstyled"></i>  <%= t ".profile", default: "Toutes les prestas" %>
-      <% end %>
-
+      <div class="services-link">
+        <%= link_to services_path do %>
+          <i class="fa fa-star-o"></i>  <%= t ".profile", default: "Toutes les prestas" %>
+        <% end %>
+      </div>
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
@@ -54,6 +55,11 @@
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to services_path do %>
+              <i class="fa fa-star-o"></i>  <%= t ".profile", default: "Toutes les prestas" %>
               <% end %>
             </li>
           </ul>
@@ -82,7 +88,6 @@
             <i class="fa fa-user"></i> <%= t(".profile", default: "Mon profil") %>
           <% end %>
         </li>
-
         <li><%= link_to edit_user_registration_path do %>
                 <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Editer mon profil" %>
               <% end %>
@@ -96,6 +101,11 @@
             <i class="fa fa-star-o"></i> <%= t ".profile", default: "Je suis un artiste" %>
           <% end %>
         </li>
+        <li>
+        <%= link_to services_path do %>
+          <i class="fa fa-star-o"></i>  <%= t ".profile", default: "Toutes les prestas" %>
+          <% end %>
+        </li>
       </ul>
     </div>
     <% else %>
@@ -107,7 +117,9 @@
         </li>
         <li><%= link_to t(".top_call_to_action", default: "proposer une prestation"), new_service_path, class: "navbar-wagon-item navbar-wagon-link" %>
         </li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to services_path do %>
+          <i class="fa fa-star-o"></i>  <%= t ".profile", default: "Voir les prestations" %>
+        <% end %></li>
       </ul>
     </div>
     <% end %>
