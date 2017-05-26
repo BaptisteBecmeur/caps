@@ -10,13 +10,13 @@ class ServicesController < ApplicationController
       @services = @services.search params[:search][:query]
     end
 
-    @services = Service.where.not(latitude: nil, longitude: nil)
+    # @services = Service.where.not(latitude: nil, longitude: nil)
 
-    @hash = Gmaps4rails.build_markers(@services) do |service, marker|
-      marker.lat service.latitude
-      marker.lng service.longitude
-      marker.infowindow render_to_string(partial: "/services/map_box", locals: { service: service })
-    end
+    # @hash = Gmaps4rails.build_markers(@services) do |service, marker|
+    #   marker.lat service.latitude
+    #   marker.lng service.longitude
+    #   marker.infowindow render_to_string(partial: "/services/map_box", locals: { service: service })
+    # end
   end
 
   def show

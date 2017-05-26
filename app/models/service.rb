@@ -13,7 +13,7 @@ class Service < ApplicationRecord
 
     include PgSearch
       pg_search_scope :search,
-      against: [ :pseudo, :city, :country, :introduction, :content, :tag, :address ],
+      against: [ :pseudo, :city, :country, :introduction, :content, :tag, :address, :zip_code ],
       associated_against: {
         uploads: [ :description ]
     }
