@@ -6,6 +6,10 @@ class ServicesController < ApplicationController
   def index
     @services = Service.all
 
+    if params[:search] and not params[:search][:query].blank?
+      @services = @services.search params[:search][:query]
+    end
+
     @services = Service.where.not(latitude: nil, longitude: nil)
 
     @hash = Gmaps4rails.build_markers(@services) do |service, marker|

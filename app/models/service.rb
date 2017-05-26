@@ -11,6 +11,13 @@ class Service < ApplicationRecord
 
   validates :tag, inclusion: { in: Service::TAGS, allow_nil: false }
 
+    include PgSearch
+      pg_search_scope :search,
+      against: [ :pseudo, :city, :country, :cover, :introduction, :content, :tag, :address, :zip_code ],
+      associated_against: {
+      cuploads: [ :description ]
+    }
+
 
   def full_address
     "#{address}, #{zip_code} #{city} #{ISO3166::Country[country].name}"

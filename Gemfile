@@ -28,6 +28,8 @@ gem "gmaps4rails"
 
 gem 'autoprefixer-rails'
 
+gem 'pg_search'
+
 source "https://rails-assets.org" do
   gem "rails-assets-underscore"
 end
