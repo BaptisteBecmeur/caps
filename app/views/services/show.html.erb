@@ -75,10 +75,10 @@
               <%= cl_image_tag upload.photo, height: 500, width: 600, crop: :fill, class: "img-responsive image-download" %>
                 <p>Titre : <%= upload.title %></p>
                 <p>Description : <%= upload.description %></p>
-
+                <% if @service.user == current_user %>
                   <%= link_to "supprimer la photo", service_upload_path(service_id: @service.id, id: upload.id),
                     data: { confirm: 'Are you sure?' }, method: :delete,class: "btn btn-primary" %>
-
+                <% end %>
             </li>
           <% end %>
         </ul>
