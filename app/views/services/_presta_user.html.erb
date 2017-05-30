@@ -13,8 +13,7 @@
     <span class="card-post-cat"></span>
       <h3><%= service.pseudo %></h3>
       <p class="card-post-author">
-          Publié par <%= service.user.first_name %>
-        <%= service.user.last_name[0] %>.
+          <%= service.tag %>
       </p>
       <p class="card-post-date">
         <%= l service.user.created_at, format: :short %>
