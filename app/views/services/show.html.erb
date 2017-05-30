@@ -106,5 +106,55 @@
 </div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title text-center" id="myModalLabel">Paiement</h3>
 
+          <h4 class ="text-center"> Booker cet artiste </h4>
+
+              <div class="modal-body text-center">
+                <script src="https://checkout.stripe.com/checkout.js"
+                class="stripe-button"
+                data-key="pk_Fhlzwtm9SCx6Uxww5fNXX8CUbwwAc"
+                data-amount="2000"
+                data-name="Caps App"
+                data-description="1 presta (20.00 €)"
+                data-image="">
+                </script>
+              </div>
+
+            <h4 ="text-center"> Contacter l'artiste' </h4>
+
+            <div class="contact-form">
+            <form id="contact" method="post" class="form" role="form">
+            <div class="row">
+            <div class="col-xs-6 col-md-6 form-group">
+            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required autofocus />
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required />
+            </div>
+            </div>
+            <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea>
+            <br />
+            <div class="row">
+            <div class="col-xs-12 col-md-12 form-group">
+            <button class="btn btn-primary pull-right" type="submit">Envoyer</button>
+            </form>
+            </div>
+
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
