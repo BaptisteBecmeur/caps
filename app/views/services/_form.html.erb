@@ -2,15 +2,15 @@
   <div class= "col-md-8 col-md-offset-2 form-signup">
     <h2 class="text-center">Proposer une prestation</h2>
       <%= simple_form_for(@service) do |f| %>
-        <%= f.input :tag, collection: Service::TAGS, selected: Service::TAGS.first %>
-        <%= f.input :pseudo %>
+        <%= f.input :tag, label: "Sélectionnez un type de prestation", collection: Service::TAGS, selected: Service::TAGS.first %>
+        <%= f.input :pseudo, placeholder: 'votre nom de scéne'  %>
         <%= f.input :introduction %>
-        <%= f.input :content %>
-        <%= f.input :address %>
-        <%= f.input :zip_code %>
-        <%= f.input :city %>
-        <%= f.input :country, priority: [ 'FR' ] %>
-        <%= f.input :cover %>
+        <%= f.input :content, label: 'Bio', placeholder: "Parlez de votre vie artistique" %>
+        <%= f.input :address, label: 'Adresse', placeholder: "Ex : 31 quai de la Seine " %>
+        <%= f.input :zip_code, label: 'Code Postal' %>
+        <%= f.input :city, label: 'Ville' %>
+        <%= f.input :country, priority: [ 'FR' ], label: 'Pays' %>
+        <%= f.input :cover, label: 'Ajouter une photo de profil' %>
         <%= f.input :cover_cache, as: :hidden %>
         <%= f.submit "Publier", class: "btn btn-default text-center" %>
       <% end %>
