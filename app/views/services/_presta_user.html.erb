@@ -13,7 +13,8 @@
     <span class="card-post-cat"></span>
       <h3><%= service.pseudo %></h3>
       <p class="card-post-author">
-          <%= service.tag %>
+          <%= service.tag %><br/>
+          Tarif : 200 €
       </p>
       <p class="card-post-date">
         <%= l service.user.created_at, format: :short %>
