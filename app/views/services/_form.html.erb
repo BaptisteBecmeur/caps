@@ -3,7 +3,7 @@
     <h2 class="text-center">Proposer une prestation</h2>
       <%= simple_form_for(@service) do |f| %>
         <%= f.input :tag, label: "Sélectionnez un type de prestation", collection: Service::TAGS, selected: Service::TAGS.first %>
-        <%= f.input :pseudo, placeholder: 'votre nom de scéne'  %>
+        <%= f.input :pseudo, placeholder: 'Votre nom de scéne'  %>
         <%= f.input :introduction %>
         <%= f.input :content, label: 'Bio', placeholder: "Parlez de votre vie artistique" %>
         <%= f.input :address, label: 'Adresse', placeholder: "Ex : 31 quai de la Seine " %>
